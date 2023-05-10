@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%@ page import="java.util.*" %>
+<%! Date d = new Date(); %>
+Today Date is :
+<%= d.getDate()%><br>
+Today Day is  :
+<%= d.getDay() %><br>
+Today Time is :
+<%! long l = d.getTime(); %>
+<%= l %>
+<%out.print(d.getTime());%>
+</body>
+</html>

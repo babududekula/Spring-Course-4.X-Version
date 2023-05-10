@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean name="addressBean" class="com.pack.beans.Address">
+		<property name="colony" value="Ameerpet"/>
+		<property name="city" value="Hyderabad"/>
+		<property name="state" value="Telenagana"/>
+		<property name="country" value="India"/>
+	</bean>
+	<bean name="accountBean" class="com.pack.beans.Account">
+		<property name="accNo" value="899078655"/>
+		<property name="accName" value="DBS Bank"/>
+		<property name="accType" value="Savings"/>
+		<property name="accBranch" value="Telangana"/>
+		<property name="accBalance" value="898087"/>
+	</bean>
+	<bean name="employeeBean" class="com.pack.beans.Employee" autowire="no">
+		<property name="employeeName" value="Babu D"/>
+		<property name="employeePassword" value="babu89709"/>
+		<property name="employeeAge" value="25"/>
+		<property name="address" ref="addressBean"/>
+		<property name="account" ref="accountBean"/>
+	</bean>
+</beans>

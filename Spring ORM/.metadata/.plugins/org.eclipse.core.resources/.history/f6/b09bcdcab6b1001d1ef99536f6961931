@@ -1,0 +1,43 @@
+package com.pack.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.pack.pojo.Customer;
+
+@Repository("customerDao")
+public class CustomerDaoImpl implements CustomerDao 
+{
+	@Autowired
+	private HibernateTemplate hibernateTemplate;
+	
+	@Override
+	public String add(Customer customer) 
+	{
+		
+		return null;
+	}
+
+	@Override
+	public Customer search(int cid) 
+	{
+		
+		return null;
+	}
+
+	@Override
+	public String update(Customer customer) 
+	{
+		
+		return null;
+	}
+
+	@Override
+	public String delete(int cid) 
+	{
+		
+		return null;
+	}
+
+}

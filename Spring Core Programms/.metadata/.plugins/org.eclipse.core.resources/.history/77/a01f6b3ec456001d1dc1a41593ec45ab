@@ -1,0 +1,9 @@
+package com.pack.h1;
+
+public class ClassA 
+{
+	public void method1()
+	{
+		System.out.println("this is ClassA method");
+	}
+}

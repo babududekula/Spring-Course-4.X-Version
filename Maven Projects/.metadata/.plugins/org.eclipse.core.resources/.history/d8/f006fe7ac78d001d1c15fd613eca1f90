@@ -1,0 +1,15 @@
+package com.pack.jdbc;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class JDBCApp 
+{
+	Connection con;
+	ResultSet rs;
+	Statement st;
+	
+	Class.forName("oracle.jdbc.OracleDriver");
+	
+}

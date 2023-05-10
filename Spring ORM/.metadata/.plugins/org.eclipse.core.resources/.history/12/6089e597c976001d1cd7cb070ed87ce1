@@ -1,0 +1,26 @@
+package com.pack.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.pack.beans.Employee;
+import com.pack.dao.EmployeeDao;
+
+public class Test 
+{
+
+	public static void main(String[] args) 
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("/com/pack/resource/applicationContext.xml");
+		EmployeeDao empDao = (EmployeeDao) context.getBean("EmployeeDao");
+		
+		Employee emp = new Employee();
+		emp.setEno(1);
+		emp.setEname("Babu");
+		emp.setEsal(2900);
+		emp.setEaddr("Hyd");
+		String status = empDao.add(emp);
+		System.out.println(status);
+	}
+
+}

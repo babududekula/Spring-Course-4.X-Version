@@ -1,0 +1,36 @@
+package com.pack.test;
+
+
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.validation.MapBindingResult;
+import org.springframework.validation.ObjectError;
+
+import com.pack.beans.Student;
+import com.pack.validator.StudentValidator;
+
+
+public class Test 
+{
+
+	public static void main(String[] args) 
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("/com/pack/resource/applicationContext.xml");
+		Student student = (Student) context.getBean("student");
+		student.method();
+		StudentValidator stdvalidator = (StudentValidator) context.getBean("studentValidator");
+		Map<String, String> map = new HashMap<String , String>();
+		MapBindingResult results = new MapBindingResult(map, "com.pack.beans.Student");
+		validator.validate(map, results);
+		List<ObjectError> list = results.getAllErrors();
+		for(ObjectError e : list)
+		{
+			System.out.println(e.getDefaultMessage());
+		}
+	}
+}

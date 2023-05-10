@@ -1,0 +1,14 @@
+
+spring.datasource.driverClassName=oracle.jdbc.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username=root
+spring.datasource.password=babu
+
+spring.mvc.view.prefix=/WEB-INF/
+spring.mvc.view.suffix=.jsp
+
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.open-in-view=true
+spring.jpa.database-platform=org.hibernate.dialect.OracleDialect
+spring.jpa.database=oracle
+spring.jpa.show-sql=true

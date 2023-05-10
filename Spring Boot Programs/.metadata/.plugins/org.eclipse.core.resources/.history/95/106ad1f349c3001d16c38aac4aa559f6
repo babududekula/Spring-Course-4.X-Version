@@ -1,0 +1,30 @@
+package com.pack.beans;
+
+public class CarService 
+{
+	private Engine engine;
+
+	public CarService() 
+	{
+		System.out.println("This is Default Constructor...");
+	}
+	 public CarService(Engine engine) 
+	 {
+		this.engine=engine;
+	 }
+	 
+	 public void service()
+	 {
+		 int i = engine.fuel();
+		 if(i == 1)
+		 {
+			 System.out.println("Car Started With petrol");
+		 }
+		 else
+		 {
+			 System.out.println("Car Started With Diesel");
+		 }
+	 }
+	
+	
+}

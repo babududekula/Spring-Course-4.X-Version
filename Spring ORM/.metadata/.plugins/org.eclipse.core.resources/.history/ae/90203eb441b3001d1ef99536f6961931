@@ -1,0 +1,33 @@
+package com.pack.dao;
+
+import com.pack.pojo.Bank;
+
+public class BankDaoImpl implements BankDao 
+{
+	
+	
+	@Override
+	public String add(Bank bank) 
+	{
+		return null;
+	}
+
+	@Override
+	public Bank serach(String bname) 
+	{
+		return null;
+	}
+
+	@Override
+	public String update(Bank bank) 
+	{
+		return null;
+	}
+
+	@Override
+	public String delete(String bname) 
+	{
+		return null;
+	}
+
+}

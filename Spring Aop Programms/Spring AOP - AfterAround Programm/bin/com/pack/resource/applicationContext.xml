@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+
+	<bean id="accountBean" class="com.pack.beans.Account">
+		<property name="accNo" value="156243673"/>
+		<property name="accName" value="Dudekula Babu"/>
+		<property name="accType" value="savings"/>
+		<property name="balance" value="90000"/>
+	</bean>
+	<bean id="chequeBean" class="com.pack.beans.Cheque">
+		<property name="cheque_no" value="xy123"/>
+		<property name="amount" value="10000"/>
+	</bean>
+	
+	<bean id="target" class="com.pack.service.BankServiceImpl"/>
+	
+	<bean id="advice" class="com.pack.validator.BankAdvice"/>
+	
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="target"/>
+		<property name="interceptorNames">
+			<array>
+				<value>advice</value>
+			</array>
+		</property>
+	</bean>
+</beans>

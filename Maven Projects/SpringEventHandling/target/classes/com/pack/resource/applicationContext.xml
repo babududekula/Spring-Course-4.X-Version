@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean name="student" class="com.pack.beans.Student">
+	<property name="name" value="Dudekula Babu"/>
+	<property name="age" value="25"/>
+</bean>
+
+<bean name="classA" class="com.pack.events.ClassA"/>
+<bean name="classB" class="com.pack.events.ClassB"/>
+<bean name="classC" class="com.pack.events.ClassC"/>
+<bean name="classD" class="com.pack.events.ClassD"/>
+</beans>

@@ -1,0 +1,21 @@
+package com.pack.h2;
+
+import com.pack.h1.ClassA;
+
+public class ClassA1 extends ClassA
+{
+
+	void display()
+	{
+		
+		System.out.println("hi");
+		super.meth4();
+	//	super.meth5();
+	}
+
+	public static void main(String[] args) {
+		new ClassB().display();
+
+	}
+
+}

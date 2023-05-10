@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=SpringBoot-Using-H2-DataBase/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.pack.service{ApplicationService.java[ApplicationService" modifiers="513" timestamp="1677304806987"/>
+    <typeInfo handle="=SpringBoot-Using-H2-DataBase/C:\/Users\/bhava\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/2.7.8\/spring-data-commons-2.7.8.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-commons=/=/maven.version=/2.7.8=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.repository(CrudRepository.class[CrudRepository" modifiers="1537" timestamp="1677304043612"/>
+    <typeInfo handle="=SpringBoot-Using-JPA/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.pack.dao{MobileDao.java[MobileDao" modifiers="513" timestamp="1677337885775"/>
+</typeInfoHistroy>

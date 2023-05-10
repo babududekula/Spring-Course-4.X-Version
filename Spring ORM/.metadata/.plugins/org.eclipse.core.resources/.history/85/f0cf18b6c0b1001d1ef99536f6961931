@@ -1,0 +1,68 @@
+package com.pack.dao;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.pack.pojo.Customer;
+@Transactional
+public class CustomerDaoImpl implements CustomerDao 
+{
+	@Autowired
+	private HibernateTemplate hibernateTemplate;
+	
+	@Override
+	public String add(Customer customer) 
+	{
+		String status="";
+		try 
+		{
+			Customer cust = (Customer)hibernateTemplate.get(Customer.class,customer.getCid());
+			if(cust == null)
+			{
+				int number  = (Integer)hibernateTemplate.save(customer);
+				if(number == customer.getCid())
+				{
+					status="Customer Inserted Successfully";
+				}
+				else
+				{
+					status="Customer Insertion Failre";
+				}
+			}
+			else
+			{
+				status = "Customer Existed Already";
+			}
+		} 
+		catch (Exception e) 
+		{
+			status="Customer Insertion Failure";
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	@Override
+	public Customer search(int cid) 
+	{
+		
+		return null;
+	}
+
+	@Override
+	public String update(Customer customer) 
+	{
+		
+		return null;
+	}
+
+	@Override
+	public String delete(int cid) 
+	{
+		
+		return null;
+	}
+
+}

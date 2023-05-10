@@ -1,0 +1,10 @@
+package com.pack.pojo;
+
+public class Bank 
+{
+	private String bname;
+	private int bid;
+	private String baccount;
+	private float bbalance;
+	private String bbranch;
+}

@@ -1,0 +1,24 @@
+package com.pack.h2;
+
+import com.pack.h1.ClassA;
+
+public class ClassB extends ClassA
+{
+	private void method2()
+	{
+		System.out.println("this is ClassB method");
+	}
+
+	public static void main(String[] args) 
+	{
+		ClassA obj = new ClassA();
+		obj.method1();
+	
+		
+		ClassB obj1 = new ClassB();
+		obj1.method1();
+		obj1.method2();
+		
+	}
+
+}

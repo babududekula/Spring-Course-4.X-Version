@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd"> -->
+
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" 
+"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="welcomeDef" template="/WEB-INF/layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/header.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/menu.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/welcome.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/footer.jsp"/>
+	</definition>
+	<definition name="addDef" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/addform.jsp"/>
+	</definition>
+	<definition name="searchDef" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/searchform.jsp"/>
+	</definition>
+	<definition name="employeedetailsDef" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/employeedetails.jsp"/>
+	</definition>
+	<definition name="updateDef" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/updateform.jsp"/>
+	</definition>
+	<definition name="editDef" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/editform.jsp"/>
+	</definition>
+	<definition name="deleteDef" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/delete.jsp"/>
+	</definition>
+	<definition name="deleteDef1" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/deletestatus.jsp"/>
+	</definition>
+	<definition name="successDef" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/success.jsp"/>
+	</definition>
+	<definition name="failureDef" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/failure.jsp"/>
+	</definition>
+	<definition name="existedDef" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/existed.jsp"/>
+	</definition>
+	<definition name="notexistedDef" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/notexisted.jsp"/>
+	</definition>
+	<definition name="statusDef" extends="welcomeDef">
+		<put-attribute name="body" value="/WEB-INF/status.jsp"/>
+	</definition>
+</tiles-definitions>

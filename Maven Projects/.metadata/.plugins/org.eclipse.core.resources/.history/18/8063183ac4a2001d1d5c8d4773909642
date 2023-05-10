@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean name="address" class="com.pack.beans.Address">
+		<property name="colony" value="Ameerpet"/>
+		<property name="city" value="Hyderabad"/>
+		<property name="state" value="Telenagana"/>
+		<property name="country" value="India"/>
+	</bean>
+	<bean name="account" class="com.pack.beans.Account" autowire-candidate="false">
+		<property name="accNo" value="899078655"/>
+		<property name="accName" value="DBS Bank"/>
+		<property name="accType" value="Savings"/>
+		<property name="accBranch" value="Telangana"/>
+		<property name="accBalance" value="898087"/>
+	</bean>
+ 	<bean name="account1" class="com.pack.beans.Account">
+		<property name="accNo" value="0908909024"/>
+		<property name="accName" value="DBS Bank"/>
+		<property name="accType" value="Savings"/>
+		<property name="accBranch" value="Telangana"/>
+		<property name="accBalance" value="898087"/>
+	</bean> 
+	<bean name="employeeBean" class="com.pack.beans.Employee" autowire="byType">
+		<constructor-arg name="employeeName" value="Babu D"/>
+		<constructor-arg name="employeePassword" value="babu89709"/>
+		<constructor-arg name="employeeAge" value="25"/>
+		<!-- <property name="address" ref="addressBean"/>
+		<property name="account" ref="accountBean"/> -->
+	</bean>
+</beans>

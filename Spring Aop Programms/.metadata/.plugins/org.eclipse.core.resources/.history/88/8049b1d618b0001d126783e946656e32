@@ -1,0 +1,30 @@
+package com.pack.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.pack.beans.Account;
+import com.pack.exception.InsufficientBalanceException;
+import com.pack.service.AccountServiceImpl;
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("/com/pack/resource/applicationContext.xml");
+		Account account = (Account) context.getBean("accountBean");
+		
+		AccountService accountService = (AccountService) context.getBean("transaction");
+		String status;
+		try 
+		{
+			status = accountService.withDraw(account, 12000);
+			System.out.println(status);
+		} 
+		catch (InsufficientBalanceException e) 
+		{
+		
+		}
+		
+	}
+}

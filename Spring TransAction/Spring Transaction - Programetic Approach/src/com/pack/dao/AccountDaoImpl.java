@@ -1,0 +1,66 @@
+package com.pack.dao;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
+
+public class AccountDaoImpl implements AccountDao 
+{
+	
+	private JdbcTemplate jdbcTemplate;
+	private DataSourceTransactionManager transactionManager;
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) 
+	{
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	public void setTransactionManager(DataSourceTransactionManager transactionManager) 
+	{
+		this.transactionManager = transactionManager;
+	}
+
+	@Override
+	public String transfurAmount(String fromAccount, String toAccount, int transferAmount) 
+	{
+		TransactionDefinition tx_Def = new DefaultTransactionDefinition();
+		TransactionStatus tx_Status = transactionManager.getTransaction(tx_Def);
+		String status="";
+		try 
+		{
+			int creditRowCount = credit(toAccount, transferAmount);
+			int debitRowCount = debit(fromAccount, transferAmount);
+			if(debitRowCount == 1 && creditRowCount == 1)
+			{
+				transactionManager.commit(tx_Status);
+				status = "Success";
+			}
+			else
+			{
+				transactionManager.rollback(tx_Status);
+				status = "Failure";
+			}
+		} 
+		catch (Exception e) 
+		{
+			status = "Fialure";
+			transactionManager.rollback(tx_Status);
+			e.printStackTrace();
+		}
+		return status;
+	}
+	public int credit(String name , int amount)
+	{
+		int RowCount = jdbcTemplate.update("update account set BALANCE = BALANCE + "+amount+" where ACCNO = '"+name+"'");
+		System.out.println("Amount is credited to "+name+" ");
+		return RowCount;
+	}
+	public int debit(String name , int amount)
+	{
+		int RowCount= jdbcTemplate.update("update account set BALANCE = BALANCE - "+amount+" where ACCNO = '"+name+"'");
+		System.out.println("Amount is debited to "+name+" ");
+		return RowCount;
+	}
+
+}

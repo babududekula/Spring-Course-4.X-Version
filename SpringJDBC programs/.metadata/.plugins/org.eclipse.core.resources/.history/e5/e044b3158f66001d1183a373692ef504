@@ -1,0 +1,10 @@
+package com.pack.blob;
+
+public class BlobInsertion {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

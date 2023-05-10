@@ -1,0 +1,66 @@
+package com.pack.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.pack.beans.Employee;
+import com.pack.dao.EmployeeDao;
+
+public class Test 
+{
+
+	public static void main(String[] args) 
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("/com/pack/resource/applicationContext.xml");
+		EmployeeDao empDao = (EmployeeDao) context.getBean("EmployeeDao");
+		
+		Employee emp = new Employee();
+		emp.setEno(4);
+		emp.setEname("Hello");
+		emp.setEsal(3456);
+		emp.setEaddr("Nellore");
+		String status = empDao.add(emp);
+		System.out.println(status);
+		
+
+		
+/*		Employee emp = empDao.serach(111);
+		if(emp == null)
+		{
+			System.out.println("Employee Not Existed");
+		}
+		else
+		{
+			System.out.println("Employee Details");
+			System.out.println("++++=============++++");
+			System.out.println("Employeee Number  : "+emp.getEno());
+			System.out.println("Employee Name     :"+emp.getEname());
+			System.out.println("Employee Salary   :"+emp.getEsal());
+			System.out.println("Employee address  :"+emp.getEaddr());
+			System.out.println("++++=============++++");
+		}
+*/
+	
+/*
+		Employee emp = new Employee();
+		emp.setEno(3);
+		emp.setEname("Dudekula Babu");
+		emp.setEsal(45000);
+		emp.setEaddr("Venkatagiri");
+		String status = empDao.update(emp);
+		System.out.println(status);
+		
+*/
+		
+/*		Employee emp = new Employee();
+		emp.setEno(3);
+		emp.setEname("Dudekula Babu");
+		emp.setEsal(45000);
+		emp.setEaddr("Venkatagiri");
+		String status = empDao.delete(emp);
+		System.out.println(status);
+*/		
+		
+	}
+
+}

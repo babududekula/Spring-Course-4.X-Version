@@ -1,0 +1,83 @@
+package com.pack.test;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import com.pack.entity.Employee;
+
+public class Test 
+{
+
+	public static void main(String[] args) throws Exception
+	{
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("emp");
+		EntityManager manager = factory.createEntityManager();
+		
+	/*	EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		Employee emp = new Employee();
+		emp.setEno(111);
+		emp.setEname("Babu");
+		emp.setEsal(10000);
+		emp.setEaddr("Hyd");
+		
+		manager.persist(emp);
+		transaction.commit();
+		System.out.println("Employee Inserted Successfully");
+		
+		
+	*/
+		
+	/*	Employee emp = manager.find(Employee.class, 111);
+		System.out.println("Employee Details");
+		System.out.println("================");
+		System.out.println("Employee number  :"+emp.getEno());
+		System.out.println("Employee Name    :"+emp.getEname());
+		System.out.println("Employee salary  :"+emp.getEsal());
+		System.out.println("Employee address :"+emp.getEaddr());
+		
+	*/
+		
+	/*	EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		Employee emp = manager.find(Employee.class, 111);
+		emp.setEname("Dudekula");
+		emp.setEsal(20000);
+		emp.setEaddr("Venkatagiri");
+		transaction.commit();
+		
+	*/
+		
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		Employee emp = manager.find(Employee.class, 111);
+		manager.remove(emp);
+		transaction.commit();
+		
+		
+		manager.close();
+		
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

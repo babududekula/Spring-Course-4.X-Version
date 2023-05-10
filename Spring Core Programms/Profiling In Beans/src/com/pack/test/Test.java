@@ -1,0 +1,19 @@
+package com.pack.test;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import com.pack.beans.DataBaseBean;
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		System.setProperty("spring.profiles.active", "production");
+		GenericXmlApplicationContext context = new GenericXmlApplicationContext();
+		context.load("/com/pack/resource/ApplicationContext-development.xml","/com/pack/resource/ApplicationContext-production.xml");
+		context.refresh();
+		
+		DataBaseBean dbBean = (DataBaseBean) context.getBean("dbBean");
+		dbBean.displayDetails();
+	}
+}

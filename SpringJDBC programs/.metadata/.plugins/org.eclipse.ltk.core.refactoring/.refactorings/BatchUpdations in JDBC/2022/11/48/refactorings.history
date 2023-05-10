@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.pack.BatchUpdations.BatchUpdation&apos; to &apos;BatchUpdationStatement&apos;&#x0D;&#x0A;- Original project: &apos;BatchUpdations in JDBC&apos;&#x0D;&#x0A;- Original element: &apos;com.pack.BatchUpdations.BatchUpdation&apos;&#x0D;&#x0A;- Renamed element: &apos;com.pack.BatchUpdations.BatchUpdationStatement&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;BatchUpdation&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.pack.BatchUpdations{BatchUpdation.java[BatchUpdation" matchStrategy="1" name="BatchUpdationStatement" qualified="false" references="true" similarDeclarations="false" stamp="1669132956109" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.pack.beans.HelloBean&apos; to &apos;Account&apos;&#x0D;&#x0A;- Original project: &apos;NestedBeans&apos;&#x0D;&#x0A;- Original element: &apos;com.pack.beans.HelloBean&apos;&#x0D;&#x0A;- Renamed element: &apos;com.pack.beans.Account&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;HelloBean&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.pack.beans{HelloBean.java[HelloBean" matchStrategy="1" name="Account" qualified="false" references="true" similarDeclarations="false" stamp="1665564066225" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,7 @@
+package com.pack.event;
+
+import org.springframework.context.ApplicationEvent;
+
+public class AccountEvent extends ApplicationEvent {
+
+}

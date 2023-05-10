@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="empbean" class="com.pack.beans.EmpBean">
+    	<property name="name" value="Babu"/>
+    	<property name="upwd" value="Babu1523"/>
+    	<property name="number" value="1523"/>
+    	<property name="mobile" value="9550458032"/>
+    </bean>	
+        
+ </beans>

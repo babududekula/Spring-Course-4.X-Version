@@ -1,0 +1,53 @@
+package com.pack.validator;
+
+import java.util.Properties;
+
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PropertiesLoaderUtils;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
+import com.pack.beans.Student;
+
+public class StudentValidator implements Validator 
+{
+	private Resource resource;
+	
+	public void setResource(Resource resource) 
+	{
+		this.resource = resource;
+	}
+
+	@Override
+	public boolean supports(Class<?> object) 
+	{
+		return Student.class.equals(object);
+	}
+
+	@Override
+	public void validate(Object obj, Errors errors) 
+	{
+		try 
+		{
+			System.out.println("Hello Validator....");
+			Properties properties = PropertiesLoaderUtils.loadProperties(resource);
+			Student student = (Student) obj;
+			if(student.getId()==null || student.getId()=="")
+			{
+				errors.rejectValue("id", "error.id.empty", properties.getProperty("error.id.empty"));
+			}
+			else
+			{
+				if(!student.getId().startsWith("Number-"))
+				{
+					errors.rejectValue("id", "error.id.invalid", properties.getProperty("error.id.invalid"));
+				}
+			}
+			
+		} catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+
+}

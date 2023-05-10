@@ -1,0 +1,6 @@
+package com.pack.dao;
+
+public interface AccountDao 
+{
+	public void transfurAmount(String fromAccount , String toAccount , int amount);
+}

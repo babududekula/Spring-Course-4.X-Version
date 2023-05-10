@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">  
+     <bean id="studentBean" class="com.pack.beans.Student">
+     	<property name="sid" value="111"/>
+     	<property name="sname" value="Babu"/>
+     	<property name="saddr" value="Hyd"/>
+     	<property name="sattendence" value="76 Percent"/>
+     	<replaced-method name="getStudentDetails" replacer="methodReplacerImpl"/>
+     </bean>  
+     <bean id="methodReplacerImpl" class="com.pack.beans.MethodReplacerImpl"/> 
+</beans>        

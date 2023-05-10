@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=Spring JDBC - NamedParameterJDBCTemplate/src&lt;com.pack.dao{EmployeeDao.java[EmployeeDao" modifiers="513" timestamp="1669090675033"/>
+    <typeInfo handle="=Spring JDBC - JDBCTemplateDao Support/F:\/Spring\/spring-framework-4.3.9.RELEASE-dist\/spring-framework-4.3.9.RELEASE\/libs\/spring-jdbc-4.3.9.RELEASE.jar&lt;org.springframework.jdbc.core.support(JdbcDaoSupport.class[JdbcDaoSupport" modifiers="1057" timestamp="1664887830270"/>
+    <typeInfo handle="=Spring JDBC - JDBCTemplateDao Support/src&lt;com.pack.dao{EmployeeDao.java[EmployeeDao" modifiers="513" timestamp="1669102088755"/>
+    <typeInfo handle="=Spring JDBC - BatchUpdation JdbcTemplate/src&lt;com.pack.dao{EmployeeDao.java[EmployeeDao" modifiers="513" timestamp="1669177132816"/>
+    <typeInfo handle="=Spring JDBC - BatchUpdation JdbcTemplate/F:\/Spring\/spring-framework-4.3.9.RELEASE-dist\/spring-framework-4.3.9.RELEASE\/libs\/spring-jdbc-4.3.9.RELEASE.jar&lt;org.springframework.jdbc.datasource.embedded(EmbeddedDatabaseConfigurer.class[EmbeddedDatabaseConfigurer" modifiers="1537" timestamp="1664887830270"/>
+    <typeInfo handle="=Spring JDBC - SimpleJdbcCall in StroredProcedures/src&lt;com.pack.dao{CustomerDao.java[CustomerDao" modifiers="513" timestamp="1669226931947"/>
+    <typeInfo handle="=Spring JDBC - SimpleJdbcCall in StroredProcedures/D:\/Program Files\/Orcale 11g\/ojdbc6.jar&lt;oracle.sql(CustomDatum.class[CustomDatum" modifiers="1537" timestamp="1666180687192"/>
+    <typeInfo handle="=Spring JDBC - Blob and Clob/src&lt;com.pack.dao{BlobClobDao.java[BlobClobDao" modifiers="513" timestamp="1669271017821"/>
+    <typeInfo handle="=Spring JDBC - ServerSideConnectionPooling Using Weblogic Server/src&lt;com.pack.dao{EmployeeDao.java[EmployeeDao" modifiers="513" timestamp="1669350209827"/>
+</typeInfoHistroy>

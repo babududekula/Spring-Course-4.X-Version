@@ -1,0 +1,20 @@
+package com.pack.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.pack.bean.GoodNight;
+
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		ApplicationContext context = new AnnotationConfigApplicationContext("/com/pack/java/application.xml");
+		GoodNight gnit = (GoodNight) context.getBean("good");
+		System.out.println(gnit.sayName());
+		System.out.println(gnit.sayAge());
+		
+		
+	}
+}

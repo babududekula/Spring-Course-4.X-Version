@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%! public void method1(){
+	for(int i=1 ; i<=10; i++)
+	{
+		int count=0;
+		for(int j=1; j<=i ; j++)
+		{
+			if(i%j == 0)
+			{
+				count++;
+			}
+		}
+		if(count == 2)
+		{
+			Out.print(i+" ");
+		}
+	}
+	
+} %>
+
+</body>
+</html>

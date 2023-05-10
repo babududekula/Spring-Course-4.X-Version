@@ -1,0 +1,12 @@
+package com.pack.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Controller 
+{
+	public String login()
+	{
+		return "<h1 align='center' style='color:red;'>Welcome To Spring Boot Application Mr.Dudekula Babu</h1>";
+	}
+}

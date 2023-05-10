@@ -1,0 +1,2 @@
+error.id.empty = Should Contain Id Please.
+error.id.invalid = Should start with "Number-".

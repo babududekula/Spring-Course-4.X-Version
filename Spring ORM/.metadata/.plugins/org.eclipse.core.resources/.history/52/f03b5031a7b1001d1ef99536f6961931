@@ -1,0 +1,74 @@
+package com.pack.test;
+
+import java.io.Serializable;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.pack.entity.Student;
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		SessionFactory sessionFactory = null;
+		Session session = null;
+		Transaction transaction = null;
+		
+		try 
+		{
+			Configuration configuration = new Configuration();
+			configuration.configure("com/pack/resource/Student.cfg.xml");
+			sessionFactory = configuration.buildSessionFactory();
+			session = sessionFactory.openSession();
+			transaction = session.beginTransaction();
+			
+			// Add Module using save or persist
+			
+//			Student std = new Student();
+//			std.setSid(333);
+//			std.setSname("Hi");
+//			std.setSaddr("Nellore");
+//			Serializable save = session.save(std);
+//			if(save.equals(333))
+//			{
+//				System.out.println("Success Good");
+//			}
+//			else
+//			{
+//				System.out.println("Sorry Bad logic");
+//			}
+//			transaction.commit();
+//			System.out.println("Employee Inserted Successfully");
+			
+//			Student std = new Student();
+//			std.setSid(333);
+//			std.setSname("Hi");
+//			std.setSaddr("Nellore");
+//			Serializable save = session.save(std);
+//			if(save.equals(333))
+//			{
+//				System.out.println("Success Good");
+//			}
+//			else
+//			{
+//				System.out.println("Sorry Bad logic");
+//			}
+//			transaction.commit();
+//			System.out.println("Employee Inserted Successfully");
+		} 
+		catch (Exception e) 
+		{
+			transaction.rollback();
+			e.printStackTrace();
+		}
+		finally 
+		{
+			session.close();
+			sessionFactory.close();
+			
+		}
+	}
+}

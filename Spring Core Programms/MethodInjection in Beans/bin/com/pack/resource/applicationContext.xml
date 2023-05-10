@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:lang="http://www.springframework.org/schema/lang" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+        
+        
+        <bean id="courseBean" class="com.pack.beans.Course" scope="prototype">
+        	<property name="cid" value="c-111"/>
+        	<property name="cname" value="JAVA"/>
+        	<property name="ccost" value="100000"/>
+        </bean>
+        <bean id="studentBean" class="com.pack.beans.Student" scope="singleton">
+        	<property name="sid" value="s-111"/>
+        	<property name="sname" value="Babu"/>
+        	<property name="addr" value="Hyd"/>
+        	<property name="course" ref="courseBean"/>
+        </bean>
+ </beans>       

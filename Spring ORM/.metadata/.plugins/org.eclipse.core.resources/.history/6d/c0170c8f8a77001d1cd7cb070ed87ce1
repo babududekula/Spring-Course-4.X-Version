@@ -1,0 +1,46 @@
+package com.pack.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.pack.entity.Employee;
+
+@Repository
+public class EmployeeDaoImpl implements EmployeeDao 
+{
+	@PersistenceContext
+	private EntityManager entityManager;
+	
+	@Transactional
+	@Override
+	public String add(Employee emp) 
+	{
+		
+		return null;
+	}
+
+	@Override
+	public Employee search(int eno) 
+	{
+		
+		return null;
+	}
+
+	@Override
+	public String update(Employee emp) 
+	{
+		
+		return null;
+	}
+
+	@Override
+	public String delete(int eno) 
+	{
+		
+		return null;
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SpringCoreBeanValidations/src/main/java/com/pack/properties/error.properties&apos; to &apos;message.properties&apos;" description="Rename resource &apos;error.properties&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/pack/properties/error.properties" name="message.properties" stamp="1675495167965" updateReferences="true"/>
+</session>

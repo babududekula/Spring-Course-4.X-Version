@@ -1,0 +1,14 @@
+package com.pack.java;
+
+import org.springframework.context.annotation.Configuration;
+
+import com.pack.bean.GoodNight;
+
+@Configuration
+public class GoodMorning 
+{
+	public GoodNight sayMessage()
+	{
+		return new GoodNight();
+	}
+}

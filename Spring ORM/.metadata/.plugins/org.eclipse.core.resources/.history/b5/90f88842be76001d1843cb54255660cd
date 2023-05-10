@@ -1,0 +1,45 @@
+package com.pack.test;
+
+
+import org.hibernate.*;
+import org.hibernate.cfg.*;
+
+import com.pack.entity.Employee;
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{	
+		Session session = null;
+		SessionFactory sessionFactory = null;
+		Transaction transaction = null;
+		try 
+		{
+			Configuration cfg = new Configuration();
+			cfg.configure("com/pack/resource/hibernate.cfg.xml");
+			sessionFactory = cfg.buildSessionFactory();
+			session = sessionFactory.openSession();
+			transaction = session.beginTransaction();
+			Employee emp = new Employee();
+			emp.setEno(111);
+			emp.setEname("Dudekula Babu");
+			emp.setSal(54000);
+			emp.setEaddr("Hyderabad");
+			session.save(emp);
+			transaction.commit();
+			System.out.println("Employee Inserted Successfully");
+			System.out.println("Transaction Success");
+		} 
+		catch (Exception e) 
+		{
+			transaction.rollback();
+			System.out.println("Trasnaction Failure");
+			e.printStackTrace();
+		}
+		finally 
+		{
+			session.close();
+			sessionFactory.close();
+		}
+	}
+}

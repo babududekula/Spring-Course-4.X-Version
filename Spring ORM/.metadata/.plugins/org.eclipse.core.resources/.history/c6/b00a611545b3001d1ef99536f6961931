@@ -1,0 +1,60 @@
+package com.pack.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.orm.jpa.JpaTransactionManager;
+
+import com.pack.pojo.Bank;
+
+public class BankDaoImpl implements BankDao 
+{
+	JpaTransactionManager
+	@PersistenceContext
+	private EntityManager entityManager;
+	
+	@Override
+	public String add(Bank bank) 
+	{
+		String status ="";
+		try 
+		{
+			Bank b = entityManager.find(Bank.class, bank.getBname());
+			if(b == null)
+			{
+				entityManager.persist(b);
+				status="Successfully Added To DataBase";
+			}
+			else
+			{
+				status ="Bank Name Already Inserted";
+			}
+		} 
+		catch (Exception e) 
+		{
+			status="Failed To Insert Data into DataBase";
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	@Override
+	public Bank serach(String bname) 
+	{
+		
+		return null;
+	}
+
+	@Override
+	public String update(Bank bank) 
+	{
+		return null;
+	}
+
+	@Override
+	public String delete(String bname) 
+	{
+		return null;
+	}
+
+}

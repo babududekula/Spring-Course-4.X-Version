@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+ <bean id="welcomeBean" class="com.pack.beans.WelcomeBean" init-method="init" destroy-method="destroy">
+ 	<property name="name" value="Babu"/>
+ 	<property name="upwd" value="Babu1523"/>
+ 	<property name="age" value="25"/>
+ 	<property name="salary" value="58900.0"/>
+ 	
+ </bean>
+ </beans>       

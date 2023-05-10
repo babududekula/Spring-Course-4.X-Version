@@ -1,0 +1,22 @@
+package com.pack.dao;
+
+public class AccountDaoImpl implements AccountDao 
+{
+	
+
+	@Override
+	public String transfurAmount(String fromAccount, String toAccount, int amount) 
+	{
+		String status = "";
+		try 
+		{
+			
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+}

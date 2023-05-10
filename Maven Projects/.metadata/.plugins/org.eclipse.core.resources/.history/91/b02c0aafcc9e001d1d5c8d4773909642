@@ -1,0 +1,28 @@
+package com.pack.bean;
+
+public class GoodNight 
+{
+	private String name;
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	static
+	{
+		System.out.println("Class Loading.....");
+	}
+	public GoodNight() 
+	{
+		System.out.println("Constructor Intilized...");
+	}
+	
+	public String sayMsg()
+	{
+		return "Hello User "+name;
+	}
+}

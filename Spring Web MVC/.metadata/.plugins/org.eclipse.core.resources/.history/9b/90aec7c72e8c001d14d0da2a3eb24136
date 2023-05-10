@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="skublue" text="6">
+<form>
+<table border="1" align="center">
+<tr>
+	<td>User Name</td>
+	<td>${name.uname}</td>
+</tr>
+<tr>
+	<td>User Password</td>
+	<td>${name.upwd}</td>
+</tr>
+<%-- <tr>
+	<td>User Age</td>
+	<td>${name.age}</td>
+</tr>
+<tr>
+	<td>User Mail</td>
+	<td>${name.uemial}</td>
+</tr>
+<tr>
+	<td>User Mobile</td>
+	<td>${name.umobile}</td> --%>
+</tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,56 @@
+package com.pack.dao;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
+
+public class AccountDaoImpl implements AccountDao 
+{
+	
+	private JdbcTemplate jdbcTemplate;
+	private DataSourceTransactionManager transactionManager;
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) 
+	{
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	public void setTransactionManager(DataSourceTransactionManager transactionManager) 
+	{
+		this.transactionManager = transactionManager;
+	}
+
+	@Override
+	public String transfurAmount(String fromAccount, String toAccount, int amount) 
+	{
+		TransactionDefinition tx_Def = new DefaultTransactionDefinition();
+		TransactionStatus tx_Status = transactionManager.getTransaction(tx_Def);
+		String status="";
+		try 
+		{
+			credit(toAccount, amount);
+			debit(fromAccount, amount);
+			transactionManager.commit(tx_Status);
+			status = "Success";
+		} 
+		catch (Exception e) 
+		{
+			status = "Fialure";
+			transactionManager.rollback(tx_Status);
+			e.printStackTrace();
+		}
+		return status;
+	}
+	public void credit(String toAccount , int amount)
+	{
+		String query ="update account set balance = balance + "+amount+" where accounts = "+toAccount+"";
+		jdbcTemplate.update(query);
+	}
+	public void debit(String fromAccount , int amount)
+	{
+		String query ="update account set balance = "+amount+" where accounts = "+fromAccount+"";
+		jdbcTemplate.update(query);
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;app1/src/main/webapp/WEB-INF/spring-servlet.xml&apos; to &apos;ds-servlet.xml&apos;" description="Rename resource &apos;spring-servlet.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/spring-servlet.xml" name="ds-servlet.xml" stamp="1670905239850" updateReferences="true"/>
+</session>

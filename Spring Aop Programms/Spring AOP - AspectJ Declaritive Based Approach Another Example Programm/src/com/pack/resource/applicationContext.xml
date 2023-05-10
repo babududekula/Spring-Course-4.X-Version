@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"> <!-- bean definitions here -->
+
+	<bean id="showBean" class="com.pack.beans.Show">
+		<property name="name" value="singing"/>
+		<property name="price" value="250"/>
+		<property name="place" value="Venkatagiri"/>
+	</bean>
+	
+	<bean id="target" class="com.pack.service.ShowServiceImpl"/>
+	
+	<bean id="advice" class="com.pack.advice.LoggingAspectAdvice"/>
+	
+	<aop:config>
+		<aop:aspect id ="LoggingBean" ref="advice">
+		<aop:pointcut expression="execution( public String com.pack.service.ShowService.runShow(com.pack.beans.Show))"  id="showPointCut"/>
+			<aop:before method="before" pointcut-ref="showPointCut"/>
+			<aop:after method="after" pointcut-ref="showPointCut"/>
+			<aop:after-returning method="afterReturning" pointcut-ref="showPointCut"/>
+			<aop:around method="around" pointcut-ref="showPointCut"/>
+			<aop:after-throwing method="afterThrowing" pointcut-ref="showPointCut"/>
+		</aop:aspect>
+	</aop:config>
+</beans>

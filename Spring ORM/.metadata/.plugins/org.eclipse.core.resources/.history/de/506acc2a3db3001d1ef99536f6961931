@@ -1,0 +1,42 @@
+package com.pack.pojo;
+
+public class Bank 
+{
+	private String bname;
+	private int bid;
+	private String baccount;
+	private float bbalance;
+	private String bbranch;
+	public String getBname() {
+		return bname;
+	}
+	public void setBname(String bname) {
+		this.bname = bname;
+	}
+	public int getBid() {
+		return bid;
+	}
+	public void setBid(int bid) {
+		this.bid = bid;
+	}
+	public String getBaccount() {
+		return baccount;
+	}
+	public void setBaccount(String baccount) {
+		this.baccount = baccount;
+	}
+	public float getBbalance() {
+		return bbalance;
+	}
+	public void setBbalance(float bbalance) {
+		this.bbalance = bbalance;
+	}
+	public String getBbranch() {
+		return bbranch;
+	}
+	public void setBbranch(String bbranch) {
+		this.bbranch = bbranch;
+	}
+	
+	
+}

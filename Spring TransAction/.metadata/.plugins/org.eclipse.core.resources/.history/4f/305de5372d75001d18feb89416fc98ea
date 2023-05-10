@@ -1,0 +1,11 @@
+package com.pack.dao;
+
+public class AccountDaoImpl implements AccountDao {
+
+	@Override
+	public void transfurAmount(String fromAccount, String toAccount, int amount) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        
+  <bean id="account" class="com.pack.beans.Account">
+  	<property name="name" value="Babu"/>
+  	<property name="id"  value="616000"/>
+  	<property name="number" value="9550458032"/>
+  	<property name="age" value="25"/>
+  </bean>
+  <bean id="employee" class="com.pack.beans.Employee">
+  	<property name="ename" value="Dudekula Babu"/>
+  	<property name="eaddress" value="Venkatagiri"/>
+  	<property name="eage" value="26"/>
+  	<property name="enumber" value="1523"/>
+  	<property name="esal" value="54908"/>
+  	<property name="acc" ref="account"/>
+  	
+  	<property name="education">
+  		<set>
+  			<value>BSC</value>
+  			<value>MCA</value>
+  			<value>BTECH</value>
+  		</set>
+  	</property>
+  	<property name="ecourse">
+  		<list>
+  			<value>JAVA</value>
+  			<value>PYTHON</value>
+  			<value>C</value>
+  		</list>
+  	</property>
+  	<property name="ecourse_and_faculty">
+  		<map>
+  			<entry key="Java" value="Babu"/>
+  			<entry key="python" value="Durga anna"/>
+  			<entry key=".Net" value="Durga anna"/>
+  		</map>
+  	</property>
+  </bean>      
+</beans>    

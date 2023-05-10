@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" > <!-- bean definitions here -->
+
+<bean id ="hello" class="com.pack.beans.HelloBean" abstract="true" init-method="init" destroy-method="destroy">
+	<property name="name" value="Babu"/> 
+	<property name="upwd" value="Babu1523"/>
+</bean>
+<bean id ="welcome" class="com.pack.beans.WelcomeBean" parent="hello">
+	<!--<property name="name" value="Dudekula"/>  -->
+	<property name="upwd" value="Babu9799"/>
+</bean>
+<bean id ="wish" class="com.pack.beans.WishBean" parent="hello">
+	<!-- <property name="name" value="DudekulaBabu"/> -->
+	<property name="upwd" value="Babu2315"/>
+</bean>
+</beans>

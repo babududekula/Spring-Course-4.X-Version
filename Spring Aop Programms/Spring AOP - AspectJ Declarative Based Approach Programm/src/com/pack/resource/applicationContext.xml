@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"> 
+
+
+	<bean id="employeeBean" class="com.pack.beans.Employee">
+		<property name="eno" value="111"/>
+		<property name="ename" value="Babu"/>
+		<property name="esal" value="25000"/>
+		<property name="eaddr" value="Hyderabad"/>
+	</bean>
+	
+	<bean id="target" class="com.pack.service.EmployeeServiceImpl"/>
+	
+	<bean id="advice" class="com.pack.advice.LoggingAspectBean"/>
+	
+	<aop:config>
+		<aop:aspect id="loggingAspect" ref="advice">
+			<aop:pointcut expression="execution(* com.pack.service.EmployeeService.*(..))" id="empPointCut"/>
+			
+			<aop:before method="before" pointcut-ref="empPointCut"/>
+			<aop:after method="after" pointcut-ref="empPointCut"/>
+			<aop:after-returning method="afterReturning" pointcut-ref="empPointCut" returning="results"/>
+			<aop:after-throwing method="afterThrowing" pointcut-ref="empPointCut" throwing="t"/>
+			<aop:around method="around" pointcut-ref="empPointCut"/>
+		</aop:aspect>
+	</aop:config>
+	
+	
+</beans>

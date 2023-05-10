@@ -1,0 +1,39 @@
+package com.pack.test;
+
+import javax.transaction.HeuristicMixedException;
+import javax.transaction.HeuristicRollbackException;
+import javax.transaction.RollbackException;
+import javax.transaction.SystemException;
+
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.pack.pojo.Employee;
+
+public class Test 
+{
+	public void insert() throws SecurityException, RollbackException, HeuristicMixedException, HeuristicRollbackException, SystemException 
+	{
+		Configuration cfg = new Configuration();
+		cfg.configure("com/pack/resources/hibernate.cfg.xml");
+		SessionFactory sessionFactory = cfg.buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Employee employee = (Employee) session.get("com.pack.pojo.Employee", "111");
+		
+		employee.setEname("Dudekula");
+		employee.setEpwd("85425");
+		employee.setEage(30);
+		employee.setEmail("bhavani@gmail.com");
+		employee.setEmobile("9032238378");
+		session.save(employee);
+		Transaction tx = session.beginTransaction();
+		tx.commit();
+		System.out.println("Employee Inserted Successfully");
+		
+		
+			
+	}
+}

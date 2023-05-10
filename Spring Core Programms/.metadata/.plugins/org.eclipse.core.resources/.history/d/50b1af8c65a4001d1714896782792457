@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="emp" class="com.pack.beans.Employee">
+		<property name="eid" value="C-111"/>
+		<property name="ename" value="Dudekula Babu"/>
+		<property name="esal" value="20000.0"/>
+		<property name="eage" value="19"/>
+		<property name="eemail" value=""/>
+		<property name="emobile" value="9550458032"/>
+	</bean>
+	<bean id="empValidator" class="com.pack.validators.EmployeeValidator">
+		<property name="resource" value="/com/pack/resource/messages.properties"/>
+	</bean>
+
+</beans>

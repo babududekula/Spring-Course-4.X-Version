@@ -1,0 +1,16 @@
+package com.pack.controller;
+
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@EnableAutoConfiguration
+public class Controller 
+{
+	@GetMapping("/login")
+	public String sayHello()
+	{
+		return "<h1 align='center' style='color:red;'>Welcome To Spring Boot Application Mr.Dudekula Babu</h1>";
+	}
+}

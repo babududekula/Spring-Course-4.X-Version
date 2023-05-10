@@ -1,0 +1,95 @@
+package com.pack.controller;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.pack.dto.Student;
+import com.pack.service.StudentService;
+
+
+@Controller("studentController")
+public class StudentControllerImpl implements StudentController 
+{
+	
+	BufferedReader br = null;
+	@Autowired
+	private StudentService studentService;
+	
+	
+	public StudentControllerImpl() 
+	{
+		try 
+		{
+			br = new BufferedReader(new InputStreamReader(System.in));
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void addStudent() 
+	{
+		try 
+		{
+			System.out.print("student id     :");
+			String sid = br.readLine();
+			System.out.print("student name   :");
+			String name = br.readLine();
+			System.out.print("student address:");
+			String saddr = br.readLine();
+			
+			Student student = new Student();
+			student.setSid(sid);
+			student.setSname(name);
+			student.setSaddr(saddr);
+			
+			String status = studentService.addStudent(student);
+			if(status.equals("existed"))
+			{
+				System.out.println("student existed already");
+			}
+			if(status.equals("success"))
+			{
+				System.out.println("student insertion success");
+			}
+			if(status.equals("failure"))
+			{
+				System.out.println("student insertion failure");
+			}
+			
+			
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void searchStudent() 
+	{
+		
+		
+	}
+
+	@Override
+	public void updateStudent() 
+	{
+		
+		
+	}
+
+	@Override
+	public void deleteStudent() 
+	{
+		
+		
+	}
+
+}

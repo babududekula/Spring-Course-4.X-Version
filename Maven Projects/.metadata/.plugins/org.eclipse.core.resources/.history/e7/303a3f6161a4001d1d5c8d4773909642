@@ -1,0 +1,9 @@
+error.id.empty = Should Contain Id Please.
+error.id.invalid = Should start with "Number-".
+error.name.empty = Should Contain Name Please.
+error.minage.empty = Should Contain Must not less than 18 Please.
+error.maxage.empty = Should Contain Must not less than 30 Please.
+error.mail.empty = Should Contain Mail Please.
+error.mail.contain = Should Contain Mail "@gamil" Please.
+error.mobile.empty = Should Contain Mobile Please.
+error.mobile.contain = Should Contain Mail "+91-" Please.

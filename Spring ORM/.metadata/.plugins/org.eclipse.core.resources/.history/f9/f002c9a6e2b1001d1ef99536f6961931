@@ -1,0 +1,30 @@
+package com.pack.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.pack.dao.CustomerDao;
+import com.pack.pojo.Customer;
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("/com/pack/resource/applicationContext.xml");
+		
+		CustomerDao customerDao = (CustomerDao) context.getBean("customerDao");
+		
+		Customer customer = new Customer();
+		customer.setCid(2);
+		customer.setCname("Durga");
+		customer.setCage(26);
+		customer.setCaddr("Nellore");
+		customer.setCmobile("988098689");
+		customer.setCmail("durga@gmail.com");
+		
+		String status = customerDao.add(customer);
+		System.out.println(status);
+		
+		
+	}
+}

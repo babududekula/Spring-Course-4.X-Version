@@ -1,0 +1,73 @@
+package com.pack.test;
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.pack.entity.Employee;
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{	
+		
+		SessionFactory sessionFactory = null;
+		Session session = null;
+		Transaction transaction = null;
+		
+		try 
+		{
+			Configuration cfg = new Configuration();
+			cfg.configure("com/pack/resource/hibernate.cfg.xml");
+			sessionFactory = cfg.buildSessionFactory();
+			session = sessionFactory.openSession();
+			transaction = session.beginTransaction();
+			
+			// Add data into database
+			
+//			Employee emp = new Employee();
+//			emp.setEno(111);
+//			emp.setEname("Dudekula Babu");
+//			emp.setSal(54000);
+//			emp.setEaddr("Hyderabad");
+//			session.save(emp);
+//			transaction.commit();
+//			System.out.println("Employee Inserted Successfully");
+//			System.out.println("Transaction Success");
+			
+			
+			// search data from database
+			
+			Employee emp = (Employee) session.get(Employee.class, 111);
+			if(emp == null)
+			{
+				System.out.println("Data not inserted into db");
+			}
+			else
+			{
+				System.out.println("Serach Details");
+				System.out.println("==================");
+				System.out.println("Employee Number  :"+emp.getEno());
+				System.out.println("Employee name    :"+emp.getEname());
+				System.out.println("Employee salary  :"+emp.getSal());
+				System.out.println("Employee Address :"+emp.getEaddr());
+				System.out.println("==================");
+			}
+			
+		} 
+		catch (Exception e) 
+		{
+			transaction.rollback();
+			System.out.println("Trasnaction Failure");
+			e.printStackTrace();
+		}
+		finally 
+		{
+				session.close();
+				
+				sessionFactory.close();	
+		}
+	}
+}

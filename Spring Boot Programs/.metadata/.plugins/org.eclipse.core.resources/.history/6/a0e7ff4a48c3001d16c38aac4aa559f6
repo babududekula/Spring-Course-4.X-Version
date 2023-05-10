@@ -1,0 +1,26 @@
+package com.pack.beans;
+
+public class CarService 
+{
+	private Engine engine;
+
+	 public CarService(Engine engine) 
+	 {
+		this.engine=engine;
+	 }
+	 
+	 public void service()
+	 {
+		 int i = engine.fuel(10);
+		 if(i<=1)
+		 {
+			 System.out.println("Car Started With petrol");
+		 }
+		 else
+		 {
+			 System.out.println("Car Started With Diesel");
+		 }
+	 }
+	
+	
+}

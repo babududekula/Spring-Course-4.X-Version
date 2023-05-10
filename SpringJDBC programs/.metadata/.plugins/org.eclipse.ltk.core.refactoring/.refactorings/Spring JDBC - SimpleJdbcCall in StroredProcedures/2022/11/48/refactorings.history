@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.pack.dao.EmployeeDao&apos; to &apos;CustomerDao&apos;&#x0D;&#x0A;- Original project: &apos;Spring JDBC - SimpleJdbcCall in StroredProcedures&apos;&#x0D;&#x0A;- Original element: &apos;com.pack.dao.EmployeeDao&apos;&#x0D;&#x0A;- Renamed element: &apos;com.pack.dao.CustomerDao&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;EmployeeDao&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.pack.dao{EmployeeDao.java[EmployeeDao" matchStrategy="1" name="CustomerDao" qualified="false" references="true" similarDeclarations="false" stamp="1669219222603" textual="false" version="1.0"/>
+</session>

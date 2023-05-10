@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+	<bean id="movieBean" class="com.pack.beans.Movie">
+		<property name="name" value="Bahubali"/>
+		<property name="cost" value="250"/>
+		<property name="time" value="3hrs"/>
+	</bean>
+	<bean id="target" class="com.pack.service.MovieServiceImpl"/>
+	
+	<bean id="advice" class="com.pack.advice.MoneyReturnAdvice"/>
+	
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="target"/>
+		<property name="interceptorNames">
+			<array>
+				<value>advice</value>
+			</array>
+		</property>
+	</bean>
+</beans>

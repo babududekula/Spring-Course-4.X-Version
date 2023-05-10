@@ -1,0 +1,42 @@
+package com.pack.dao;
+
+import org.springframework.orm.hibernate4.HibernateTemplate;
+
+import com.pack.beans.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao 
+{
+	private HibernateTemplate hibernateTemplate;
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) 
+	{
+		this.hibernateTemplate = hibernateTemplate;
+	}
+	@Override
+	public String add(Employee emp) 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee serach(int eno) 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String update(Employee emp) 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String delete(Employee emp) 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

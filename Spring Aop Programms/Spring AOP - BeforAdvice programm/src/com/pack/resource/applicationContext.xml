@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd"> 
+
+	<bean id="employee" class="com.pack.bean.Employee">
+		<property name="eno" value="11"/>
+		<property name="ename" value="Dudekula Babu"/>
+		<property name="esal" value="25000"/>
+		<property name="eaddr" value="Hyderabad"/>
+		<property name="emobile" value="+91-9550458032"/>
+		<property name="eemail" value="babu1523y@gmail.com"/>
+	</bean>
+	
+	<!-- Target -->
+	<bean id ="target" class="com.pack.service.EmployeeServiceImpl"/>
+	
+	<!-- Advice -->
+	<bean id ="advice" class="com.pack.advice.validator.EmployeeValidatorAdviceImpl"/>
+	
+	<!-- Point Cut -->
+	<bean id="pointcut" class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<property name="mappedNames">
+			<array>
+				<value>getEmployeeDetails</value>
+				<value>displayEmployeeDetails</value>
+			</array>
+		</property>
+	</bean>
+	
+	<!-- Advisor -->
+	<bean id="advisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="pointcut" ref="pointcut"/>
+		<property name="advice" ref="advice"/>
+	</bean>
+	
+	<!-- proxy -->
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="target"/>
+		<property name="interceptorNames">
+			<list>
+				<value>advisor</value>
+			</list>
+		</property>
+	</bean>
+</beans>

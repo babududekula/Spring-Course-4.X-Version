@@ -1,0 +1,23 @@
+package com.pack.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.pack.dao.Student;
+import com.pack.dao.StudentDao;
+
+public class Test {
+
+	public static void main(String[] args) 
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("/com/pack/resource/applicationContext.xml");
+		StudentDao studentDao = (StudentDao) context.getBean("studentDao");
+		Student std = new Student();
+		std.setSid("222");
+		std.setSname("Babu");
+		std.setSaddr("Hyd");
+		String status = studentDao.add(std);
+		System.out.println(status);
+	}
+
+}

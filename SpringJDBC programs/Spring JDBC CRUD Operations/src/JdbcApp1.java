@@ -1,0 +1,22 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class JdbcApp1 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "babu");
+		Statement st = con.createStatement();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter table name");
+		String tableName = br.readLine();
+		String sql = "create table "+tableName+"(eno number(5) primary key , ename varchar2(20) ,esal float(10), eaddr varchar2(20))";
+		st.executeUpdate(sql);
+		System.out.println("table created successfully");
+		
+	}
+}

@@ -1,0 +1,30 @@
+package com.pack.validator;
+
+import org.springframework.core.io.Resource;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
+import com.pack.beans.Student;
+
+public class StudentValidator implements Validator 
+{
+	private Resource resource;
+	
+	public void setResource(Resource resource) 
+	{
+		this.resource = resource;
+	}
+
+	@Override
+	public boolean supports(Class<?> object) 
+	{
+		return Student.class.equals(object);
+	}
+
+	@Override
+	public void validate(Object obj, Errors errors) 
+	{
+		
+	}
+
+}

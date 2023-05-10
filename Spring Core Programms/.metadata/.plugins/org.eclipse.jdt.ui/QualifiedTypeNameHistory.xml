@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.pack.scopes.CustomThreadLocal"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.ObjectFactory"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.config.CustomScopeConfigurer"/>
+    <fullyQualifiedTypeName name="com.pack.scopes.ThreadScope"/>
+    <fullyQualifiedTypeName name="com.pack.beans.HelloBean"/>
+    <fullyQualifiedTypeName name="com.pack.beans.WelcomeBean"/>
+    <fullyQualifiedTypeName name="com.pack.beans.WishBean"/>
+    <fullyQualifiedTypeName name="com.pack.beans.EmployeeBean"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
+    <fullyQualifiedTypeName name="com.pack.beans.Customer"/>
+    <fullyQualifiedTypeName name="PrimeOrNot"/>
+    <fullyQualifiedTypeName name="com.pack.beans.Student"/>
+    <fullyQualifiedTypeName name="com.pack.beans.Branch"/>
+    <fullyQualifiedTypeName name="com.pack.beans.Student1"/>
+    <fullyQualifiedTypeName name="com.pack.beans.Branch1"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="com.pack.beans.Course"/>
+    <fullyQualifiedTypeName name="com.pack.beans.Employee"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="Hello.Welcome"/>
+    <fullyQualifiedTypeName name="Hello"/>
+    <fullyQualifiedTypeName name="Welcome.Hello"/>
+    <fullyQualifiedTypeName name="Welcome"/>
+    <fullyQualifiedTypeName name="Hero"/>
+    <fullyQualifiedTypeName name="Villan"/>
+    <fullyQualifiedTypeName name="javax.sql.DataSource"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="com.pack.dto.Student"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="com.pack.dao.StudentDao"/>
+    <fullyQualifiedTypeName name="com.pack.dao.StudentDaoImpl"/>
+    <fullyQualifiedTypeName name="oracle.jdbc.pool.OracleDataSource"/>
+    <fullyQualifiedTypeName name="com.pack.service.StudentService"/>
+    <fullyQualifiedTypeName name="com.pack.service.StudentServiceImpl"/>
+    <fullyQualifiedTypeName name="com.pack.controller.StudentController"/>
+    <fullyQualifiedTypeName name="com.pack.controller.StudentControllerImpl"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="com.pack.config.AppConfig"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
+</qualifiedTypeNameHistroy>

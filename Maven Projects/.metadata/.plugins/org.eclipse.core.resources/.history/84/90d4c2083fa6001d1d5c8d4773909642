@@ -1,0 +1,4 @@
+<%String s = request.getParameter("operation");
+if(s.equals("Addition"))
+%>
+<jsp:forward page="add.jsp"/>

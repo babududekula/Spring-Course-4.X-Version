@@ -1,0 +1,7 @@
+package com.pack.events;
+
+import org.springframework.context.ApplicationListener;
+
+public class ClassE implements ApplicationListener<Context> {
+
+}

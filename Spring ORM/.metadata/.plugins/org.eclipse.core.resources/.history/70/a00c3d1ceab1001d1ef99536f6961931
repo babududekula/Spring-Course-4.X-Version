@@ -1,0 +1,73 @@
+package com.pack.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.pack.dao.CustomerDao;
+import com.pack.pojo.Customer;
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("/com/pack/resource/applicationContext.xml");
+		
+		CustomerDao customerDao = (CustomerDao) context.getBean("customerDao");
+		
+		Customer customer = new Customer();
+		customer.setCid(2);
+		customer.setCname("Durga");
+		customer.setCage(26);
+		customer.setCaddr("Nellore");
+		customer.setCmobile("988098689");
+		customer.setCmail("durga@gmail.com");
+		
+		String status = customerDao.add(customer);
+		System.out.println(status);
+		
+		
+		
+//		Customer cust = customerDao.search(2);
+//		if(cust == null)
+//		{
+//			System.out.println("Customer Not Existed Check Once Please");
+//		}
+//		else
+//		{
+//			System.out.println("Customer Details");
+//			System.out.println("===================");
+//			System.out.println("Customer Id     :"+cust.getCid());
+//			System.out.println("Customer Name   :"+cust.getCname());
+//			System.out.println("Customer Age    :"+cust.getCage());
+//			System.out.println("Customer Addr   :"+cust.getCaddr());
+//			System.out.println("Customer Mobile :"+cust.getCmobile());
+//			System.out.println("Customer Mail   :"+cust.getCmail());
+//			System.out.println("===================");
+//			
+//		}
+//		
+		
+//		Customer customer = new Customer();
+//		customer.setCid(2);
+//		customer.setCname("XXX");
+//		customer.setCage(23);
+//		customer.setCaddr("Hyderabad");
+//		customer.setCmobile("9550458032");
+//		customer.setCmail("XXX@gmail.com");
+//		
+//		String status = customerDao.update(customer);
+//		System.out.println(status);
+		
+		
+//		Customer customer = new Customer();
+//		customer.setCid(2);
+//		customer.setCname("XXX");
+//		customer.setCage(23);
+//		customer.setCaddr("Hyderabad");
+//    	customer.setCmobile("9550458032");
+//		customer.setCmail("XXX@gmail.com");
+//		String status = customerDao.delete(customer);
+//		System.out.println(status);
+		
+	}
+}

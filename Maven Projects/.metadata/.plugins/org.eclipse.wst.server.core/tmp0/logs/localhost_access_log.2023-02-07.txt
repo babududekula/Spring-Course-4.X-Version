@@ -1,0 +1,10 @@
+127.0.0.1 - - [07/Feb/2023:09:12:53 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [07/Feb/2023:09:12:54 +0530] "GET /Jsp/classA.jsp HTTP/1.1" 200 746
+0:0:0:0:0:0:0:1 - - [07/Feb/2023:09:13:01 +0530] "GET /Jsp/classB.jsp?first=10&second=20&operation=Addition HTTP/1.1" 200 271
+0:0:0:0:0:0:0:1 - - [07/Feb/2023:09:13:03 +0530] "GET /Jsp/classA.jsp HTTP/1.1" 200 746
+0:0:0:0:0:0:0:1 - - [07/Feb/2023:09:13:09 +0530] "GET /Jsp/classB.jsp?first=20&second=50&operation=Multiplication HTTP/1.1" 200 273
+0:0:0:0:0:0:0:1 - - [07/Feb/2023:09:13:10 +0530] "GET /Jsp/classA.jsp HTTP/1.1" 200 746
+0:0:0:0:0:0:0:1 - - [07/Feb/2023:09:13:17 +0530] "GET /Jsp/classB.jsp?first=100&second=10&operation=Division HTTP/1.1" 200 271
+0:0:0:0:0:0:0:1 - - [07/Feb/2023:09:13:18 +0530] "GET /Jsp/classA.jsp HTTP/1.1" 200 746
+0:0:0:0:0:0:0:1 - - [07/Feb/2023:09:18:53 +0530] "GET /Jsp/classA.jsp HTTP/1.1" 200 746
+0:0:0:0:0:0:0:1 - - [07/Feb/2023:09:19:01 +0530] "GET /Jsp/classB.jsp?first=8&second=90&operation=Addition HTTP/1.1" 404 737

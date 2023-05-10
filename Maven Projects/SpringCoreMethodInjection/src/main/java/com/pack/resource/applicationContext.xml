@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean name="savingsAccount" class="com.pack.beans.ClassB"/>
+<bean name="currentAccount" class="com.pack.beans.ClassC"/>
+
+<bean name="savingsAccountFactory" class="com.pack.Interface.ClassD">
+<lookup-method name="getMethods" bean="savingsAccount"/>
+</bean>
+
+<bean name="currentAccountFactory" class="com.pack.Interface.ClassD">
+	<lookup-method name="getMethods" bean="currentAccount"/>
+</bean>
+</beans>

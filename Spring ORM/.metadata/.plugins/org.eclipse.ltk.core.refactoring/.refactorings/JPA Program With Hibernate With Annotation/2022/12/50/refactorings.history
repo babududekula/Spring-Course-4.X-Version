@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JPA Program With Hibernate With Annotation/src/META-INF/jpapersistence.xml&apos; to &apos;persistence.xml&apos;" description="Rename resource &apos;jpapersistence.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/META-INF/jpapersistence.xml" name="persistence.xml" stamp="1670562618880" updateReferences="true"/>
+</session>

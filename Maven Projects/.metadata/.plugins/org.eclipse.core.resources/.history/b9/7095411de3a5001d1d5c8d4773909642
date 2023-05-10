@@ -1,0 +1,31 @@
+package com.pack.beans;
+
+import com.pack.event.AccountEventPublisher;
+
+public class Account 
+{
+	private AccountEventPublisher publisher;
+	
+	public void setPublisher(AccountEventPublisher publisher) 
+	{
+		this.publisher = publisher;
+	}
+	
+	public void create()
+	{
+		System.out.println("Account Created");
+	}
+	public void serach()
+	{
+		System.out.println("Account Serached");
+	}
+	public void update()
+	{
+		System.out.println("Account Updated");
+	}
+	public void delete()
+	{
+		System.out.println("Account Deleted");
+	}
+	
+}

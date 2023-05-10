@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+<bean id ="cust" class="com.pack.beans.Customer" init-method="init" destroy-method="destroy">
+  		<property name="cName" value="Babu"/> 
+  		<property name="cNumber" value="9550458032"/>
+  		<property name="cid" value="Babu1523"/>
+  		<property name="cmail" value="Babu"/>
+</bean>    
+<bean id="accPostProcess" class="com.pack.PostProcess.BeanPostProcessImpl"/>  
+</beans>        

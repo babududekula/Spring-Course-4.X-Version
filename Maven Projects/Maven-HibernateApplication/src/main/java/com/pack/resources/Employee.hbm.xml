@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.pack.pojo.Employee" table="employee">
+		<id name="enumber" column="ENUMBER"/>
+		<property name="ename" column="ENAME"/>
+		<property name="epwd" column="EPWD"/>
+		<property name="eage" column="EAGE"/>
+		<property name="email" column="EMAIL"/>
+		<property name="emobile" column="EMOBILE"/>
+	</class>
+</hibernate-mapping>               

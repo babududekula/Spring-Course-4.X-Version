@@ -1,0 +1,67 @@
+package com.pack.dao;
+
+
+import org.springframework.orm.hibernate4.HibernateTemplate;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import com.pack.beans.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao 
+{
+	
+	private HibernateTemplate hibernateTemplate;
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) 
+	{
+		this.hibernateTemplate = hibernateTemplate;
+	}
+	
+	@Transactional
+	@Override
+	public String add(Employee emp) 
+	{
+		String status="";
+		try 
+		{
+			int eno = (Integer) hibernateTemplate.save(emp);
+			if(eno == emp.getEno())
+			{
+				status = "Employee Inserted Successfully";
+			}
+			else
+			{
+				status = "Employee Insertion Failure";
+			}
+		} 
+		catch (Exception e) 
+		{
+			status = "Employee Insertion Failure";
+			e.printStackTrace();
+		}
+		return status;
+	}
+	
+	@Transactional
+	@Override
+	public Employee serach(int eno) 
+	{
+		
+		return null;
+	}
+	
+	@Transactional
+	@Override
+	public String update(Employee emp) 
+	{
+		
+		return null;
+	}
+
+	@Override
+	public String delete(Employee emp) 
+	{
+		
+		return null;
+	}
+
+}

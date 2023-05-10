@@ -1,0 +1,45 @@
+package com.pack.dao;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+
+
+public class AccountDaoImpl implements AccountDao
+{
+
+	private JdbcTemplate jdbcTemplate;
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) 
+	{
+		this.jdbcTemplate = jdbcTemplate;
+	}
+
+	@Override
+	public String transferAmount(String fromAccount, String toAccount, int amount) 
+	{
+		String status="";
+		int debitRowCount = debit(status, amount);
+		int creditRowCount = credit(status, debitRowCount);
+		if(debitRowCount == 1 && creditRowCount == 1)
+		{
+			status = "Success";
+		}
+		else
+		{
+			status = "Failure";
+		}
+		return status;
+	}
+	public int debit(String name , int balance)
+	{
+		int RowCount = jdbcTemplate.update("update account set balance = balance - "+balance+" where accno = '"+name+"' ");
+		System.out.println("Amount is debited from "+name+"");
+		return RowCount;
+	}
+	public int credit(String name , int balance)
+	{
+		int RowCount = jdbcTemplate.update("update account set balance = balance + "+balance+" where accno = '"+name+"'");
+		System.out.println("Amount is debited from  "+name+" ");
+		return RowCount;
+	}
+	
+}

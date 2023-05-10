@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Spring Web MVC - Spring security">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <property name="context-root" value="Spring_Web_MVC_-_Spring_security"/>
+        <property name="java-output-path" value="/Spring Web MVC - Spring security/build/classes"/>
+    </wb-module>
+</project-modules>

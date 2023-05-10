@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="accountBean" class="com.pack.beans.Account" autowire-candidate="true">
+	<property name="accno" value="616000"/>
+	<property name="accname" value="Babu"/>
+	<property name="acctype" value="savings"/>
+	<property name="balance" value="25000"/>
+</bean>
+<bean id="accountBean2" class="com.pack.beans.Account" autowire-candidate="false">
+	<property name="accno" value="9550"/>
+	<property name="accname" value="Babu"/>
+	<property name="acctype" value="savings"/>
+	<property name="balance" value="5000"/>
+</bean>
+<bean id="addressBean" class="com.pack.beans.Address">
+
+	<property name="hno" value="102B"/>
+	<property name="street" value="23/3rt"/>
+	<property name="city" value="ameerpet"/>
+	<property name="state" value="Telangana"/>
+</bean>
+<bean id="employeeBean" class="com.pack.beans.Employee" autowire="constructor">
+	<constructor-arg value="98078" index="0"/>
+	<constructor-arg value="Dudekula Babu" index="1"/>
+	<constructor-arg value="236780" index="2"/>
+<!--	
+	<constructor-arg ref="accountBean"/>
+	<constructor-arg ref="addressBean"/>    
+-->
+
+<!--
+	<property name="eid" value="2345"/>
+	<property name="ename" value="Babu Dudekula"/>
+	<property name="esal" value="56800"/>
+	  
+	<property name="account" ref="accountBean"/>
+	<property name="address" ref="addressBean"/>
+-->
+</bean>
+
+</beans>

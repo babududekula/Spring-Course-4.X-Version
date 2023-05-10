@@ -1,0 +1,11 @@
+package com.pack.dao;
+
+import com.pack.pojo.Bank;
+
+public interface BankDao 
+{
+	public abstract String add(Bank bank);
+	public abstract Bank serach(String bname);
+	public abstract String update(Bank bank);
+	public abstract String delete(String bname);
+}

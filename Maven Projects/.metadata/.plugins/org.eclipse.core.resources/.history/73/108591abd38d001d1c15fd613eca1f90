@@ -1,0 +1,64 @@
+package com.pack.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class JdbcApp 
+{
+	Connection con;
+	Statement st;
+	ResultSet rs;
+	
+	public JdbcApp()
+	{
+		try 
+		{
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "babu");
+			st = con.createStatement();
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	public void getEmployee()
+	{
+		try 
+		{
+			String query = "select * from employee";
+			rs = st.executeQuery(query);
+			System.out.println("ENUMBER\tENAME\tEPWD\tEAGE\tEMAIL\tEMOBILE");
+			System.out.println("===========================");
+			boolean b = rs.next();
+			if(b == true)
+			{
+				System.out.println(rs.getString(1)+"\t");
+				System.out.println(rs.getString(2)+"\t");
+				System.out.println(rs.getInt(3)+"\t");
+				System.out.println(rs.getString(4)+"\t");
+				System.out.println(rs.getString(5)+"\t");
+				System.out.println(rs.getString(6)+"\n");
+			}
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				con.close();
+				st.close();
+				rs.close();
+			} 
+			catch (Exception e2) 
+			{
+				e2.printStackTrace();
+			}
+		}
+	}
+}

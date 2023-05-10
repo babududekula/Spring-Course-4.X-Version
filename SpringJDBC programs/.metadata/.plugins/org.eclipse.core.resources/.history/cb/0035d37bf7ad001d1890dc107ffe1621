@@ -1,0 +1,170 @@
+package com.pack.dao;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+
+import com.pack.dto.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao 
+{
+	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+	public void setNamedParameterJdbcTemplate(NamedParameterJdbcTemplate namedParameterJdbcTemplate) 
+	{
+		this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
+	}
+	
+	@Override
+	public String add(Employee emp) 
+	{
+		String status = "";
+		String query = "";
+		try 
+		{
+			query = "select * from employee where eid =:eid";
+			Map<String, Object>  params = new HashMap<String , Object>(); 
+			params.put("eid", emp.getEid());
+			List<Employee> employeeList = namedParameterJdbcTemplate.query(query, params, (rs , index)->{
+				Employee emp1 = new Employee();
+				emp1.setEid(rs.getInt("eid"));
+				emp1.setEname(rs.getString("ename"));
+				emp1.setEaddr(rs.getString("eaddr"));
+				return emp1;
+				
+			});
+			if(employeeList.isEmpty() == true)
+			{
+				query = "insert into employee values(:eid , :ename , :eaddr)";
+				Map<String, Object> params_values = new HashMap<String , Object>();
+				params_values.put("eid", emp.getEid());
+				params_values.put("ename", emp.getEname());
+				params_values.put("eaddr", emp.getEaddr());
+				
+				int RowCount = namedParameterJdbcTemplate.update(query, params_values);
+				if(RowCount == 1)
+				{
+					status = "Employee Successfully executed";
+				}
+				else
+				{
+					status = "Employee execution failure";
+				}
+			}
+			else
+			{
+				status = "Employee existed already";
+			}
+		} 
+		catch (Exception e) 
+		{
+			status = "Employee Execution Failure";
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	@Override
+	public Employee search(int eid) 
+	{
+		Employee emp = null;
+		try 
+		{
+			String query ="select * from employee where eid =:eid";
+			Map<String, Object> params = new HashMap<String , Object>();
+			params.put("eid", eid);
+			List<Employee> employeeList = namedParameterJdbcTemplate.query(query, params, (rs ,index)->{
+			Employee emp1 = new Employee();
+			emp1.setEid(rs.getInt("eid"));
+			emp1.setEname(rs.getString("ename"));
+			emp1.setEaddr(rs.getString("eaddr"));
+				return emp1;
+			});
+			if(employeeList.isEmpty() == true)
+			{
+				emp = null;
+			}
+			else
+			{
+				emp = employeeList.get(0);
+			}
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}	
+		return emp;
+	}
+
+	@Override
+	public String update(Employee emp) 
+	{
+		String status = "";
+		try 
+		{
+				String query ="update employee set ename = :ename , eaddr = :eaddr where eid =:eid";
+				Map<String, Object> params = new HashMap<String , Object>();
+				params.put("ename", emp.getEname());
+				params.put("eaddr" , emp.getEaddr());
+				params.put("eid", emp.getEid());
+				int RowCount = namedParameterJdbcTemplate.update(query, params);
+				if(RowCount == 1)
+				{
+					status = "Employee Updated Successfully";
+				}
+				else
+				{
+					status = "Employee Updation Failure";
+				}
+			
+			
+		} catch (Exception e) 
+		{
+			status = "Employee Updation Failure";
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	@Override
+	public String delete(int eid) 
+	{
+		String status = "";
+		try 
+		{
+			Employee emp = search(eid);
+			if(emp == null)
+			{
+				status = "Employee Not Existed";
+			}
+			else
+			{
+				String query = "delete from employee where eid=:eid";
+				Map<String, Object> params = new HashMap<String,Object>();
+				params.put("eid", eid);
+				int RowCount = namedParameterJdbcTemplate.update(query, params);
+				if(RowCount == 1)
+				{
+					status = "Employee Deleted Successfully";
+				}
+				else
+				{
+					status = "Employee Deleted Failure";
+				}
+			}
+		} 
+		catch (Exception e) 
+		{
+			status = "Employee Deleted Failure";
+			e.printStackTrace();
+		}
+		
+		return status;
+	}
+
+}
+
+
+
+
+
